@@ -1,0 +1,363 @@
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*{
+	border: 1px solid #333333;
+}
+
+body {
+  font-size: 100%;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+body, html {
+  height: 100%;
+}
+
+a {
+  color: #3e3947;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* -------------------------------- 
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+.cd-img-replace {
+  /* replace text with a background-image */
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+/* -------------------------------- 
+
+Main components 
+
+-------------------------------- */
+/*側邊導覽列*/
+.cd-section {
+/*  visibility: hidden;*/
+  min-height: 100%;
+  position: relative;
+/*  padding: 2em 0;*/
+/*  background-attachment: fixed;*/
+  background-position: center center;
+  background-size: cover;
+}
+.cd-scroll-down {
+  position: absolute;
+  left: 50%;
+  right: auto;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  bottom: 20px;
+  width: 38px;
+  height: 44px;
+  background: url("../img/cd-arrow-bottom.svg") no-repeat center center;
+}
+/* No Touch devices */
+.cd-nav-trigger {
+  display: none;
+}
+.cd-nav{
+	z-index: 999;
+}
+.no-touch #cd-vertical-nav {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  bottom: auto;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.no-touch #cd-vertical-nav li {
+  text-align: right;
+}
+.no-touch #cd-vertical-nav a {
+  display: inline-block;
+  /* prevent weird movements on hover when you use a CSS3 transformation - webkit browsers */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.no-touch #cd-vertical-nav a:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.no-touch #cd-vertical-nav a span {
+  float: right;
+  display: inline-block;
+  -webkit-transform: scale(0.6);
+  -moz-transform: scale(0.6);
+  -ms-transform: scale(0.6);
+  -o-transform: scale(0.6);
+  transform: scale(0.6);
+}
+.no-touch #cd-vertical-nav a:hover span {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+.no-touch #cd-vertical-nav a:hover .cd-label {
+  opacity: 1;
+}
+.no-touch #cd-vertical-nav a.is-selected .cd-dot {
+  background-color: white;
+}
+.no-touch #cd-vertical-nav .cd-dot {
+  position: relative;
+  /* we set a top value in order to align the dot with the label. If you change label's font, you may need to change this top value*/
+  top: 8px;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #d88683;
+  -webkit-transition: -webkit-transform 0.2s, background-color 0.5s;
+  -moz-transition: -moz-transform 0.2s, background-color 0.5s;
+  transition: transform 0.2s, background-color 0.5s;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+.no-touch #cd-vertical-nav .cd-label {
+  position: relative;
+  margin-right: 10px;
+  padding: .4em .5em;
+  color: #1A1A1A;
+  background-color: #fff;
+  font-size: 14px;
+  font-size: 0.875rem;
+  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
+  opacity: 0;
+  -webkit-transform-origin: 100% 50%;
+  -moz-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  -o-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+}
+/*滾動視差區域*/
+/*廟語喃喃*/
+#section1 {
+	background-image: url("../bg/banner.png");
+}
+#section1 > .whiper{
+	background-image: url("./../img/whisper.png");
+	background-position: center center;
+    background-size: 80vw;
+	background-repeat: no-repeat;
+/*	z-index: 50;*/
+}
+.people {
+/*	z-index: 999;*/
+	min-height: 800px;
+	background-attachment: fixed;
+	background-position: top 0px right 250px;
+    background-size: 1350px;
+	background-repeat: no-repeat;
+}
+.title{
+	position: absolute;
+	font-size: 70px;
+	bottom: 200px;
+	right: 120px;
+	color: #F78942;
+	background-color: #000000;
+	font-weight: 600;
+	padding: 3px;
+	padding-bottom: 5px;
+}
+.title2{
+	position: absolute;
+	font-size: 70px;
+	bottom: 100px;
+	right: 70px;
+	color: #F78942;
+	background-color: #000000;
+	font-weight: 600;
+	padding: 3px;
+	padding-bottom: 5px;
+}
+.vicky_t{
+	color:#3C7BE2;
+}
+.joy_t{
+	color:#F55C75;
+}
+.kelly_t{
+	color:#905CB0;
+}
+.emma_t{
+	color:#5954BC;
+}
+.beryl_t{
+	color: #56C968;
+}
+#section2 {
+	background-image: url("../bg/bg1.png");
+/*	background-color: #f3da88;*/
+}
+#section2 > .daisy{
+	background-image: url("../img/daisy.png");
+	background-position: top -50px right 250px;
+	
+}
+#section2 > img.name{
+/*	z-index: 99;*/
+	width: 100%;
+	position: fixed;
+}
+#section3 {
+	background-image: url("../bg/bg2.png");
+}
+#section3 > .vicky{
+	background-image: url("../img/vicky.png");
+	background-position: top -80px right 400px;
+	
+
+}
+
+
+#section4 {
+	background-image: url("../bg/bg3.png");
+}
+#section4 > .joy{
+	background-image: url("../img/joy.png");
+	background-size: 1400px;
+	background-position: top -50px right 300px;
+
+}
+#section5 {
+	background-image: url("../bg/bg4.png");
+}
+
+#section5 > .kelly{
+	background-image: url("../img/kelly.png");
+	background-position: top -50px right 400px;
+}
+#section6 {
+	background-image: url("../bg/bg5.png");
+}
+#section6 > .emma{
+	background-image: url("../img/emma.png");
+	background-position: top -70px right 300px;
+
+}
+#section7 {
+	background-image: url("../bg/bg6.png");
+}
+#section7 > .beryl{
+	background-image: url("../img/beryl.png");
+	background-position: top -70px right 300px;
+
+}
+/*gototop*/
+#gtp{
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  cursor: pointer;
+}
+
+/*主選單*/
+.sidenav {
+  z-index: 999;
+  height: 100%; 
+  width: 0; 
+  position: fixed; 
+  z-index: 1; 
+  top: 0; 
+  left: 0;
+  background-color: #922325; 
+  overflow-x: hidden; 
+  padding-top: 60px; 
+  transition: 0.5s; 
+}
+.sidenav a {
+  text-align: center;
+  margin-top: 40px;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 40px;
+  color: #F1FFFF;
+  display: block;
+  transition: 0.3s;
+/*  border-bottom: medium;*/
+/*  border-bottom: 1px solid ;*/
+  
+}
+.sidenav a:hove{
+/*	border-bottom: 1.5px solid ;*/
+}
+.sidenav .closebtn:hover {
+  color: #fff;
+  transform: scale(1.2);
+  transform: translate(50% 50%)
+}
+.sidenav .close{
+	position: relative;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 40px;
+  margin-left: 50px;
+  border: 0px;
+  
+}
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.twicon-fortune img{
+	z-index: 1;
+	position: fixed;
+	cursor: pointer;  
+	width: 40px;
+	top: 20px;
+	left: 30px;
+	transition: 0.3s;
+}
+.twicon-fortune img:hover{
+	transform: scale(1.2);
+	transform: translate3d(0, 0, -10px);
+}
+
